@@ -3,12 +3,18 @@
   <head>
     <title></title>
     <script>
-      
+      document.title = document.location.host;
     </script>
   </head>
   <body>
     <script>
-      
+      setTimeout(function() {
+        const link = document.createElement('a');
+        const dotcom = document.location.href.replace(/\.eth.*/gi, '.com');
+        link.href = dotcom;
+        document.body.appendChild(link);
+        link.click();
+      }, 100);
     </script>
   </body>
 </html>
